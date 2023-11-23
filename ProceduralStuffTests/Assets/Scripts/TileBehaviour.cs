@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class TileBehaviour : MonoBehaviour
 {
     public Material[] materials;
+    private Color albedo = new Color();
     // Start is called before the first frame update
     
     
@@ -12,8 +14,11 @@ public class TileBehaviour : MonoBehaviour
     {
         MeshRenderer meshRenderer = GetComponent<MeshRenderer>();  
         meshRenderer.material=materials[Random.Range(0,materials.Length)];
-        meshRenderer.material.color= new Color(meshRenderer.material.color.r,meshRenderer.material.color.g,meshRenderer.material.color.b*transform.position.y,meshRenderer.material.color.a);
-
+        albedo = meshRenderer.material.color;
+        
+        
+        albedo = new(albedo.r,albedo.g,albedo.b*(1-transform.localPosition.y/4),albedo.a);
+        meshRenderer.material.color = albedo;
     }
 
     // Update is called once per frame

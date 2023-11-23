@@ -12,7 +12,7 @@ public class GridSpawner : MonoBehaviour
     [SerializeField] private int gridZ;
     [SerializeField] private int noiseHeight;
 
-    public float gridSpacingOffset = 1.1f;
+    public float gridSpacingOffset = 1f;
     
     private Vector3 gridOrigin = Vector3.zero;
 
