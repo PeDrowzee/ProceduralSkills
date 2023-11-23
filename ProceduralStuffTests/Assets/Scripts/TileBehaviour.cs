@@ -5,20 +5,28 @@ using UnityEngine;
 
 public class TileBehaviour : MonoBehaviour
 {
+    public static int materialIndex;
+    
+    public GridSpawner spawner; //Not used yet, might come in handy in the future
     public Material[] materials;
     private Color albedo = new Color();
     // Start is called before the first frame update
     
+
     
     void Awake()
     {
         MeshRenderer meshRenderer = GetComponent<MeshRenderer>();  
-        meshRenderer.material=materials[Random.Range(0,materials.Length)];
+        meshRenderer.material=materials[materialIndex];
         albedo = meshRenderer.material.color;
         
         
-        albedo = new(albedo.r,albedo.g,albedo.b*(1-transform.localPosition.y/4),albedo.a);
+        albedo = new(albedo.r*(transform.localPosition.y/4),albedo.g*(transform.localPosition.y/4),albedo.b*(transform.localPosition.y/4),albedo.a);
         meshRenderer.material.color = albedo;
+        //materialIndex++;
+        // if(materialIndex>materials.Length-1){
+        //     materialIndex=0;
+        // }
     }
 
     // Update is called once per frame
