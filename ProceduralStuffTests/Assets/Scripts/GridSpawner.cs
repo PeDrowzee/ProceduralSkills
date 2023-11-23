@@ -10,7 +10,7 @@ public class GridSpawner : MonoBehaviour
     public GameObject tile;
     [SerializeField] private int gridX;
     [SerializeField] private int gridZ;
-    [SerializeField] private int noiseHeight;
+    [SerializeField] private int maxNoiseHeight;
 
     public float gridSpacingOffset = 1f;
     
@@ -38,7 +38,7 @@ public class GridSpawner : MonoBehaviour
                 new Vector3 //make spawn position
                     (
                         x * gridSpacingOffset-(gridX*gridSpacingOffset/2), 
-                        GenerateNoise(x,z,8f) * noiseHeight, 
+                        GenerateNoise(x,z,10f) * maxNoiseHeight, 
                         z * gridSpacingOffset-(gridZ*gridSpacingOffset/2)
                     );
                 GameObject spawnedTile = Instantiate(tile, spawnPosition, Quaternion.identity);
