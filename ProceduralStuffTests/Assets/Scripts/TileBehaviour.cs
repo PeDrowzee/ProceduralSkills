@@ -12,6 +12,7 @@ public class TileBehaviour : MonoBehaviour
     {
         MeshRenderer meshRenderer = GetComponent<MeshRenderer>();  
         meshRenderer.material=materials[Random.Range(0,materials.Length)];
+        meshRenderer.material.color= new Color(meshRenderer.material.color.r,meshRenderer.material.color.g,meshRenderer.material.color.b*transform.position.y,meshRenderer.material.color.a);
 
     }
 
