@@ -31,7 +31,7 @@ public class GridSpawner : MonoBehaviour
         for(int x = 0; x < gridX; x++){
             for(int z = 0; z < gridZ; z++){
                 //Spawn items at each possible location, starting from world origin (not centered yet)
-                Vector3 spawnPosition = new Vector3(x * gridSpacingOffset, 0, z * gridSpacingOffset) + gridOrigin;
+                Vector3 spawnPosition = new Vector3(x * gridSpacingOffset-gridX/2, 0, z * gridSpacingOffset-gridZ/2) + gridOrigin;
                 Instantiate(tile, spawnPosition, Quaternion.identity);
             }
         }
