@@ -1,21 +1,22 @@
 using UnityEngine;
 using System.Collections;
+using System;
 
 public class GridSpawner : MonoBehaviour
 {
     public GameObject tile;
     [SerializeField] private int gridX;
     [SerializeField] private int gridZ;
-    public int maxNoiseHeight;
+    [Tooltip("Lower value means 'more randomized' noise")][SerializeField] [Range(1.05f,50f)] private float frequency;
+    [Tooltip("Max height reachable by che objects spawned")][Range(1f,20f)] public int amplitude;
 
     public float gridSpacingOffset = 1f;
     
     private Vector3 gridOrigin;
 
-    private float timer;
-
     private int _randomizedX;
     private int _randomizedZ;
+
     
 
 
@@ -32,7 +33,7 @@ public class GridSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         timer += Time.deltaTime;
+
     }
 
     private void SpawnGrid(){
@@ -43,19 +44,19 @@ public class GridSpawner : MonoBehaviour
                 new Vector3 //make spawn position
                     (
                         x * gridSpacingOffset-(gridX*gridSpacingOffset/2), 
-                        GenerateNoise(x,z,5f) * maxNoiseHeight, 
+                        GenerateNoise(x,z,frequency) * amplitude, 
                         z * gridSpacingOffset-(gridZ*gridSpacingOffset/2)
                     ) + gridOrigin;
                 GameObject spawnedTile = Instantiate(tile, spawnPosition, Quaternion.identity);
                 spawnedTile.transform.SetParent(transform);
-                print(GenerateNoise(x,z,10f));
+                print(GenerateNoise(x,z,frequency));
             }
         }
     }
 
-    private float GenerateNoise(int x, int z, float detailScale) {
-        float noiseX = (x+_randomizedX + transform.position.x) / detailScale;
-        float noiseZ = (z+_randomizedZ + transform.position.z) / detailScale;
+    private float GenerateNoise(int x, int z, float frequence) {
+        float noiseX = (x+_randomizedX + transform.position.x) / frequence;
+        float noiseZ = (z+_randomizedZ + transform.position.z) / frequence;
 
         return Mathf.PerlinNoise(noiseX, noiseZ);
     }

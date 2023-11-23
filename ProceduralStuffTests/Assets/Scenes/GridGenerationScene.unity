@@ -247,7 +247,8 @@ MonoBehaviour:
   tile: {fileID: 992178970}
   gridX: 100
   gridZ: 100
-  maxNoiseHeight: 4
+  frequency: 0
+  amplitude: 0
   gridSpacingOffset: 1
 --- !u!4 &83526202
 Transform:
@@ -280,6 +281,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9e529455ea88a73449e14c8b2cb67dea, type: 2}
+    - target: {fileID: 2533088533011551712, guid: 9de78ce625a3cf347bb212a47333e2bc, type: 3}
+      propertyPath: spawner
+      value: 
+      objectReference: {fileID: 2078409675}
     - target: {fileID: 2533088533011551712, guid: 9de78ce625a3cf347bb212a47333e2bc, type: 3}
       propertyPath: materials.Array.size
       value: 1
@@ -496,7 +501,8 @@ MonoBehaviour:
   tile: {fileID: 992178970}
   gridX: 100
   gridZ: 100
-  maxNoiseHeight: 4
+  frequency: 0
+  amplitude: 0
   gridSpacingOffset: 1
 --- !u!4 &1367907252
 Transform:
@@ -545,7 +551,8 @@ MonoBehaviour:
   tile: {fileID: 992178970}
   gridX: 100
   gridZ: 100
-  maxNoiseHeight: 4
+  frequency: 0
+  amplitude: 0
   gridSpacingOffset: 1
 --- !u!4 &1536605008
 Transform:
@@ -703,7 +710,8 @@ MonoBehaviour:
   tile: {fileID: 992178970}
   gridX: 100
   gridZ: 100
-  maxNoiseHeight: 4
+  frequency: 27.3
+  amplitude: 10
   gridSpacingOffset: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
