@@ -23,6 +23,10 @@ public class TileBehaviour : MonoBehaviour
         
         albedo = new(albedo.r*(transform.localPosition.y/spawner.amplitude),albedo.g*(transform.localPosition.y/spawner.amplitude),albedo.b*(transform.localPosition.y/spawner.amplitude),albedo.a);
         meshRenderer.material.color = albedo;
+       
+       
+       
+       
         //materialIndex++;
         // if(materialIndex>materials.Length-1){
         //     materialIndex=0;

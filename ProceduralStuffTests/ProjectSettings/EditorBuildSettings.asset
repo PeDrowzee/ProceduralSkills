@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/PlaneGenerationScene.unity
+    path: Assets/_MyScenes/PlaneGenerationScene.unity
     guid: 4c7a46a80903d374fbd1f31dcca0d0b0
   m_configObjects: {}

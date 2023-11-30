@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/GridGenerationScene.unity
+- path: Assets/_MyScenes/GridGenerationScene.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
